@@ -30,5 +30,10 @@
         <action
             android:id="@+id/action_edit_Note_Fragment_to_home_Fragment"
             app:destination="@id/home_Fragment" />
+
+        <argument
+            android:name="note"
+            app:argType="com.example.taskbuddy.model.Note"
+            app:nullable="true"/>
     </fragment>
 </navigation>
