@@ -1,7 +1,9 @@
 package com.example.taskbuddy.fragment
 
 import android.app.AlertDialog
+import android.app.DatePickerDialog
 import android.os.Bundle
+import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
@@ -21,6 +23,7 @@ import com.example.taskbuddy.databinding.FragmentEditNoteBinding
 import com.example.taskbuddy.viewmodel.NoteViewModel
 import java.util.Currency
 import com.example.taskbuddy.model.Note
+import java.util.Calendar
 
 
 class Edit_Note_Fragment : Fragment(R.layout.fragment_edit__note_), MenuProvider{
@@ -53,13 +56,29 @@ class Edit_Note_Fragment : Fragment(R.layout.fragment_edit__note_), MenuProvider
 
         binding.editNoteTitle.setText(currentNote.noteTitele)
         binding.editNoteDesc.setText(currentNote.noteDesc)
+        binding.editnoteDate.setText(currentNote.noteDate)
+
+        // Set up the date picker dialog
+        binding.editnoteDate.setOnClickListener {
+            val calendar = Calendar.getInstance()
+            val year = calendar.get(Calendar.YEAR)
+            val month = calendar.get(Calendar.MONTH)
+            val day = calendar.get(Calendar.DAY_OF_MONTH)
+            val datePickerDialog = DatePickerDialog(requireContext(), { _, selectedYear, selectedMonth, selectedDay ->
+                // Format the date and set it to the TextView
+                val selectedDate = "$selectedDay/${selectedMonth + 1}/$selectedYear"
+                binding.editnoteDate.text = Editable.Factory.getInstance().newEditable(selectedDate)
+            }, year, month, day)
+            datePickerDialog.show()
+        }
 
        binding.editNoteFab.setOnClickListener {
            val noteTitle = binding.editNoteTitle.text.toString().trim()
            val noteDesc = binding.editNoteDesc.text.toString().trim()
+           val noteDate = binding.editnoteDate.text.toString().trim()
 
            if(noteTitle.isNotEmpty()){
-               val note = Note(currentNote.id, noteTitle, noteDesc)
+               val note = Note(currentNote.id, noteTitle, noteDesc, noteDate)
                notesViewModel.updateNote(note)
                view.findNavController().popBackStack(R.id.home_Fragment, false)
            }else {

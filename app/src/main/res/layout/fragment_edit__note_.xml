@@ -18,9 +18,9 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins"
-            android:text="Edit Note."
+            android:text="Edit Task"
             android:textStyle="bold"
-            android:textColor="@color/red"
+            android:textColor="@color/blue"
             android:textSize="24sp" />
 
         <EditText
@@ -39,7 +39,7 @@
         <EditText
             android:id="@+id/editNoteDesc"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:hint="Enter the description"
             android:gravity="top"
             android:padding="12dp"
@@ -49,6 +49,20 @@
             android:layout_below="@id/editNoteTitle"
             android:layout_marginTop="12dp" />
 
+        <EditText
+            android:id="@+id/editnoteDate"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/editNoteDesc"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/pink_boarder"
+            android:fontFamily="@font/"
+            android:hint="Enter The Start Date"
+            android:inputType="date"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textSize="20sp" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/editNoteFab"
             android:layout_width="wrap_content"
@@ -56,7 +70,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:clickable="true"
-            android:backgroundTint="@color/pink"
+            android:backgroundTint="@color/blue"
             android:tintMode="@color/white"
             android:src="@drawable/edit"
             android:layout_alignParentBottom="true"

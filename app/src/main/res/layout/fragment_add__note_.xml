@@ -18,8 +18,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins"
-            android:text="Add Note."
-            android:textColor="@color/red"
+            android:text="Add Task"
+            android:textColor="@color/blue"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -39,7 +39,7 @@
         <EditText
             android:id="@+id/addNoteDesc"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
             android:hint="Enter the description"
             android:gravity="top"
             android:padding="12dp"
@@ -48,6 +48,36 @@
             android:background="@drawable/pink_boarder"
             android:layout_below="@id/addNoteTitle"
             android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/addnoteDate"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/addNoteDesc"
+            android:layout_marginTop="42dp"
+            android:background="@drawable/pink_boarder"
+            android:fontFamily="@font/"
+            android:hint="Enter The Start Date"
+            android:inputType="date"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textSize="20sp" />
+
+<!--        <EditText-->
+<!--            android:id="@+id/addnoteDate"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_below="@+id/addNoteDesc"-->
+<!--            android:layout_marginTop="42dp"-->
+<!--            android:background="@drawable/pink_boarder"-->
+<!--            android:fontFamily="@font/"-->
+<!--            android:hint="Enter The Start Date"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="date"-->
+<!--            android:maxLines="1"-->
+<!--            android:padding="12dp"-->
+<!--            android:textSize="20sp" />-->
+
 
     </RelativeLayout>
 </layout>
