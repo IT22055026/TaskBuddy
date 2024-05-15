@@ -18,7 +18,8 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
         override fun areItemsTheSame(oldItem: Note, newItem: Note): Boolean {
             return oldItem.id == newItem.id &&
                     oldItem.noteDesc == newItem.noteDesc &&
-                    oldItem.noteTitele == newItem.noteTitele
+                    oldItem.noteTitele == newItem.noteTitele &&
+                    oldItem.noteDate == newItem.noteDate
         }
 
         override fun areContentsTheSame(oldItem: Note, newItem: Note): Boolean {
@@ -41,6 +42,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
         holder.itemBinding. noteTitle.text = currentNote.noteTitele
         holder.itemBinding. noteDesc.text = currentNote.noteDesc
+        holder.itemBinding.noteDate.text = currentNote.noteDate
 
         holder.itemView.setOnClickListener{
             val direction = Home_FragmentDirections.actionHomeFragmentToEditNoteFragment(currentNote)

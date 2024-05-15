@@ -73,7 +73,7 @@ class Home_Fragment : Fragment(R.layout.fragment_home_), SearchView.OnQueryTextL
     private fun setupHomeRecycleerView(){
         noteAdapter = NoteAdapter()
         binding.homeRecyclerView.apply {
-            layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+            layoutManager = StaggeredGridLayoutManager(1,StaggeredGridLayoutManager.VERTICAL)
             setHasFixedSize(true)
             adapter = noteAdapter
         }
